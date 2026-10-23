@@ -30,40 +30,40 @@ An API Token will be needed for each UniFi client performing DDNS updates.
 To create the token(s):
 1. Tokens can now be created at the user level or account level
 
-   User token:  
-   - Go to https://dash.cloudflare.com/profile/api-tokens
-   - Key differences:
-     - Access to all accounts for which the user is a member and has permissions (unless explicitly limited in token settings)
-     - Actions performed by this token are associated with the user
-     - Viewable/Editable only by the creating user
+    User token:  
+    - Go to https://dash.cloudflare.com/profile/api-tokens
+    - Key differences:
+      - Access to all accounts for which the user is a member and has permissions (unless explicitly limited in token settings)
+      - Actions performed by this token are associated with the user
+      - Viewable/Editable only by the creating user
 
-   Account token: (Recommended)
-   - On the [CloudFlare Dashboard](https://dash.cloudflare.com/), open the account which manages the target zone(s)
-   - Select Manage Account > Account API Tokens 
-   - Key differences:
-     - Access limited to only the account for which it is created
-     - Actions performed by this token are not attributed to a user
-     - Viewable/Editable by all account members (with the appropriate permissions)
+    Account token: (Recommended)
+    - On the [CloudFlare Dashboard](https://dash.cloudflare.com/), open the account which manages the target zone(s)
+    - Select Manage Account > Account API Tokens 
+    - Key differences:
+      - Access limited to only the account for which it is created
+      - Actions performed by this token are not attributed to a user
+      - Viewable/Editable by all account members (with the appropriate permissions)
 2. Click "Create Token"
 3. Click "Use Template" for "Edit zone DNS"
 4. Under "Zone Resources," include the target zone or select "All zones from an account."
-   (If using a user token, "All zones" is also an option.)  
-   Set a token name and/or additional restrictions as desired.
+    (If using a user token, "All zones" is also an option.)  
+    Set a token name and/or additional restrictions as desired.
 5. Click "Continue to summary" then "Create Token."  
-   Copy and save the generated token for later use configuring the UniFi OS Controller.
+    Copy and save the generated token for later use configuring the UniFi OS Controller.
 
 ## Configuring UniFi OS
 
 1. Log in to your [UniFi OS Controller](https://unifi.ui.com/).
 2. Navigate to Settings > Internet > WAN and scroll down to **Dynamic DNS**.
 3. Click **Create New Dynamic DNS** and provide:
-   - `Service`: Choose `custom` or `dyndns`.
-   - `Hostname`: Full subdomain and hostname to update (e.g., `subdomain.mydomain.com` or `mydomain.com` for root domain).
-   - `Username`: Domain name containing the record (e.g., `mydomain.com`).
-   - `Password`: Cloudflare API Token.
-   - `Server`: Cloudflare Worker route `<worker-name>.<worker-subdomain>.workers.dev/update?ip=%i&hostname=%h`.
-     - For older UniFi devices, omit the URL path.
-     - Remove `https://` from the URL.
+    - `Service`: Choose `custom` or `dyndns`.
+    - `Hostname`: Full subdomain and hostname to update (e.g., `subdomain.mydomain.com` or `mydomain.com` for root domain).
+    - `Username`: Domain name containing the record (e.g., `mydomain.com`).
+    - `Password`: Cloudflare API Token.
+    - `Server`: Cloudflare Worker route `<worker-name>.<worker-subdomain>.workers.dev/update?ip=%i&hostname=%h`.
+      - For older UniFi devices, omit the URL path.
+      - Remove `https://` from the URL.
 
 ### Testing Changes - UDM-Pro
 To test the configuration and force an update on a UDM-Pro:
