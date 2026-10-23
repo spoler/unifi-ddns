@@ -30,7 +30,7 @@ An API Token will be needed for each UniFi client performing DDNS updates.
 To create the token(s):
 1. Tokens can now be created at the user level or account level
 
-    User token:  
+    User token:
     - Go to https://dash.cloudflare.com/profile/api-tokens
     - Key differences:
       - Access to all accounts for which the user is a member and has permissions (unless explicitly limited in token settings)
@@ -39,7 +39,7 @@ To create the token(s):
 
     Account token: (Recommended)
     - On the [CloudFlare Dashboard](https://dash.cloudflare.com/), open the account which manages the target zone(s)
-    - Select Manage Account > Account API Tokens 
+    - Select Manage Account > Account API Tokens
     - Key differences:
       - Access limited to only the account for which it is created
       - Actions performed by this token are not attributed to a user
@@ -47,9 +47,9 @@ To create the token(s):
 2. Click "Create Token"
 3. Click "Use Template" for "Edit zone DNS"
 4. Under "Zone Resources," include the target zone or select "All zones from an account."
-    (If using a user token, "All zones" is also an option.)  
+    (If using a user token, "All zones" is also an option.)
     Set a token name and/or additional restrictions as desired.
-5. Click "Continue to summary" then "Create Token."  
+5. Click "Continue to summary" then "Create Token."
     Copy and save the generated token for later use configuring the UniFi OS Controller.
 
 ## Configuring UniFi OS
