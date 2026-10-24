@@ -17,7 +17,7 @@ class CloudflareApiException extends Error {
 class Cloudflare {
 	constructor(options) {
 		this.cloudflare_url = "https://api.cloudflare.com/client/v4";
-		this.token = options.token;
+		this.token = options.token; 
 	}
 
 	async findZone(name) {

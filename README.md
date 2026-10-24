@@ -1,13 +1,13 @@
 # Cloudflare DDNS for UniFi OS
 
-A Cloudflare Worker script that provides a UniFi-compatible DDNS API to dynamically update the IP address of a DNS A record.
+A Cloudflare Worker script that provides a UniFi-compatible DDNS API to dynamically update the IP address of a DNS A record.   
 
 ## Why?
 
 UniFi Dream Machine Pro (UDM-Pro) or UniFi Security Gateway (USG) users may need to update Cloudflare domain name DNS records when their public IP address changes. UniFi does not natively support Cloudflare as a DDNS provider.
 
 ## Configuring Cloudflare
-
+	
 Ensure you have a Cloudflare account and your domain is configured to point to Cloudflare nameservers.
 
 ### Worker Setup
@@ -87,3 +87,4 @@ To test the configuration and force an update on a USG:
 
 - For subdomains (`sub.example.com`), create an A record manually in Cloudflare dashboard first.
 - If you encounter a hostname resolution error (`inadyn[2173778]: Failed resolving hostname https: Name or service not known`), remove `https://` from the `Server` field.
+
